@@ -1,6 +1,10 @@
 #include "zmk2.dtsi"
 
 / {
+    chosen {
+        zmk,split = &split;
+    };
+
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "row2col";
@@ -33,3 +37,6 @@
     kscan = <&kscan0>;
 };
 
+&split {
+    role = "peripheral";
+};
